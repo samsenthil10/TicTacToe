@@ -455,6 +455,31 @@ public class TicTacToeGame {
 		}
 		return flag;
 	}
+	
+	public static int computerSubSequentChoice() {
+		
+		int flag = 0;
+		
+		if(board[5]==' ') {
+			
+			board[5]= computerCharacter;
+			return 1;
+		}
+
+		int[] possibleSides = {2,4,6,8};
+		if(board[2]==' ' || board[4]!=' ' || board[6]!=' ' || board[8]!=' ') {
+			while(true) {	
+				int chosenIndex = 0 + (int)Math.random()*3;
+				int chosenSide = possibleSides[chosenIndex];
+				if(board[chosenSide] == ' ') {
+					board[chosenSide] = computerCharacter;
+					break;
+				}
+			}
+			return 1;
+		}
+		return flag;
+	}
 
 	public static void main(String[] args) {
 
