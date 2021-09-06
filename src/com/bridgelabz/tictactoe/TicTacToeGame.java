@@ -294,151 +294,150 @@ public class TicTacToeGame {
 		return flag;
 	}
 	
-	public static int blockComputerFinalWinningMove() {
+	public static int blockPlayerFinalWinningMove() {
 
 		int flag = 0;
 
-		if(board[1] == board[2] && board[2] == computerCharacter) {
+		if(board[1] == board[2] && board[2] == playerCharacter) {
 			if(board[3] != ' ') {
-				board[3] = playerCharacter;
+				board[3] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[1] == board[3] && board[3] == computerCharacter) {
+		else if(board[1] == board[3] && board[3] == playerCharacter) {
 			if(board[2] != ' ')  {
-				board[2] = playerCharacter;
+				board[2] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[1] == board[4] && board[4] == computerCharacter) {
+		else if(board[1] == board[4] && board[4] == playerCharacter) {
 			if(board[7] != ' ') {
-				board[7] = playerCharacter;
+				board[7] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[1] == board[7] && board[7] == computerCharacter) {
+		else if(board[1] == board[7] && board[7] == playerCharacter) {
 			if(board[4] != ' ') {
-				board[4] = playerCharacter;
+				board[4] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[1] == board[5] && board[5] == computerCharacter) {
+		else if(board[1] == board[5] && board[5] == playerCharacter) {
 			if(board[9] != ' ') {
-				board[9] = playerCharacter;
+				board[9] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[1] == board[9] && board[9] == computerCharacter) {
+		else if(board[1] == board[9] && board[9] == playerCharacter) {
 			if(board[5] != ' ') {
-				board[5] = playerCharacter;
+				board[5] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[2] == board[3] && board[3] == computerCharacter) {
+		else if(board[2] == board[3] && board[3] == playerCharacter) {
 			if(board[1] != ' ') {
-				board[1] = playerCharacter;
+				board[1] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[2] == board[5] && board[5] == computerCharacter) {
+		else if(board[2] == board[5] && board[5] == playerCharacter) {
 			if(board[8] != ' ') {
-				board[8] = playerCharacter;
+				board[8] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[2] == board[8] && board[8] == computerCharacter) {
+		else if(board[2] == board[8] && board[8] == playerCharacter) {
 			if(board[5] != ' ') {
-				board[5] = playerCharacter;
+				board[5] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[2] == board[5] && board[5] == computerCharacter) {
+		else if(board[2] == board[5] && board[5] == playerCharacter) {
 			if(board[8] != ' ') {
-				board[8] = playerCharacter;
+				board[8] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[3] == board[5] && board[5] == computerCharacter) {
+		else if(board[3] == board[5] && board[5] == playerCharacter) {
 			if(board[7] != ' ') {
-				board[7] = playerCharacter;
+				board[7] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[3] == board[7] && board[7] == computerCharacter) {
+		else if(board[3] == board[7] && board[7] == playerCharacter) {
 			if(board[5] != ' ') {
-				board[5] = playerCharacter;
+				board[5] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[3] == board[6] && board[6] == computerCharacter) {
+		else if(board[3] == board[6] && board[6] == playerCharacter) {
 			if(board[9] != ' ') {
-				board[9] = playerCharacter;
+				board[9] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[3] == board[9] && board[9] == computerCharacter) {
+		else if(board[3] == board[9] && board[9] == playerCharacter) {
 			if(board[6] != ' ') {
-				board[6] = playerCharacter;
+				board[6] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[4] == board[7] && board[7] == computerCharacter) {
+		else if(board[4] == board[7] && board[7] == playerCharacter) {
 			if(board[1] != ' ') {
-				board[1] = playerCharacter;
+				board[1] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[4] == board[5] && board[5] == computerCharacter) {
+		else if(board[4] == board[5] && board[5] == playerCharacter) {
 			if(board[6] != ' ') {
-				board[6] = playerCharacter;
+				board[6] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[4] == board[6] && board[6] == computerCharacter) {
+		else if(board[4] == board[6] && board[6] == playerCharacter) {
 			if(board[5] != ' ') {
-				board[5] = playerCharacter;
+				board[5] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[5] == board[8] && board[8] == computerCharacter) {
+		else if(board[5] == board[8] && board[8] == playerCharacter) {
 			if(board[2] != ' ') {
-				board[2] = playerCharacter;
+				board[2] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[5] == board[6] && board[6] == computerCharacter) {
+		else if(board[5] == board[6] && board[6] == playerCharacter) {
 			if(board[4] != ' ') {
-				board[4] = playerCharacter;
+				board[4] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[5] == board[7] && board[7] == computerCharacter) {
+		else if(board[5] == board[7] && board[7] == playerCharacter) {
 			if(board[3] != ' ') {
-				board[3] = playerCharacter;
+				board[3] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[6] == board[9] && board[9] == computerCharacter) {
+		else if(board[6] == board[9] && board[9] == playerCharacter) {
 			if(board[3] != ' ') {
-				board[3] = playerCharacter;
+				board[3] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[7] == board[8] && board[8] == computerCharacter) {
+		else if(board[7] == board[8] && board[8] == playerCharacter) {
 			if(board[9] != ' ') {
-				board[9] = playerCharacter;
+				board[9] = computerCharacter;
 				return 1;
 			}
 		}
-		else if(board[7] == board[9] && board[9] == computerCharacter) {
+		else if(board[7] == board[9] && board[9] == playerCharacter) {
 			if(board[8] != ' ') {
-				board[8] = playerCharacter;
+				board[8] = computerCharacter;
 				return 1;
 			}
 		}
 		return flag;
 	}
-	
 	public static void main(String[] args) {
 
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
