@@ -4,10 +4,14 @@ import java.util.Scanner;
 
 public class TicTacToeGame {
 
+
+	public static final int HEADS=1;
+	public static final int TAILS=2;
 	public static Scanner scanner = new Scanner(System.in);		
 	public static char board[] = new char[10];
 	public static char playerCharacter;
 	public static char computerCharacter;
+	public static char currentPlayer;
 
 	public static void initializeBoard() {
 
@@ -75,14 +79,21 @@ public class TicTacToeGame {
 			System.out.println("Invalid Position");
 		}
 	}
+	
+	public static void tossForFirstPlayer() {
+		
+		System.out.print("Choose your toss(Heads(1)/Tails(2)): ");
+		int tossCall = scanner.nextInt();
+		int toss = HEADS + (int)(Math.random() * TAILS);
+		if(tossCall == toss)
+			currentPlayer = playerCharacter;
+		else
+			currentPlayer = computerCharacter;
+	}
 
 	public static void main(String[] args) {
 
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
 		System.out.println();
-		initializeBoard();
-		chooseCharacter();
-		showBoard();
-		chooseBoardPosition(playerCharacter);
 	}
 }
