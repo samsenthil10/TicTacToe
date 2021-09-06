@@ -23,16 +23,32 @@ public class TicTacToeGame {
 		switch(choice) {
 
 		case "X": playerCharacter = 'X';
-			      computerCharacter = 'O';
-			      break;
+				  computerCharacter = 'O';
+				  break;
 		case "O": playerCharacter = 'O';
 				  computerCharacter = 'X';
 				  break;
+		default:System.out.println("Invalid Character!");
+				System.exit(0);
+		}
+	}
+
+	public static void showBoard() {
+		
+		System.out.println(" -------------");
+		for (int iterator = 1; iterator < 10; iterator++) {
+			System.out.print(" | " + iterator);
+			if (iterator % 3 == 0) {
+				System.out.println(" | ");
+				System.out.println(" -------------");
+			}
 		}
 	}
 
 	public static void main(String[] args) {
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
 		initializeBoard();
+		chooseCharacter();
+		showBoard();
 	}
 }
