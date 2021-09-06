@@ -12,6 +12,8 @@ public class TicTacToeGame {
 	public static char playerCharacter;
 	public static char computerCharacter;
 	public static char currentPlayer;
+	public static final char TIE = 'T';
+	public static final char CONTINUE = 'C';
 
 	public static void initializeBoard() {
 
@@ -90,7 +92,63 @@ public class TicTacToeGame {
 		else
 			currentPlayer = computerCharacter;
 	}
-
+	
+	public static char checkForGameStateEveryMove() {
+	
+		if(board[1] == board[2] && board[2] == board[3] && board[3] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[1] == board[4] && board[4] == board[7] && board[7] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[1] == board[5] && board[5] == board[9] && board[9] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[2] == board[5] && board[5] == board[8] && board[8] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[3] == board[5] && board[5] == board[7] && board[7] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[3] == board[6] && board[6] == board[9] && board[9] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[4] == board[5] && board[5] == board[6] && board[6] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[7] == board[8] && board[8] == board[9] && board[9] == playerCharacter) {
+			return playerCharacter;
+		}
+		else if(board[1] == board[2] && board[2] == board[3] && board[3] == computerCharacter) {
+			return computerCharacter;
+		}
+		else if(board[1] == board[4] && board[4] == board[7] && board[7] == computerCharacter) {
+			return computerCharacter;
+		}
+		else if(board[1] == board[5] && board[5] == board[9] && board[9] == computerCharacter) {
+			return computerCharacter;
+		}
+		else if(board[2] == board[5] && board[5] == board[8] && board[8] == computerCharacter) {
+			return computerCharacter;
+		}
+		else if(board[3] == board[5] && board[5] == board[7] && board[7] == computerCharacter) {
+			return computerCharacter;
+		}
+		else if(board[3] == board[6] && board[6] == board[9] && board[9] == computerCharacter) {
+			return computerCharacter;
+		}
+		else if(board[4] == board[5] && board[5] == board[6] && board[6] == computerCharacter) {
+			return computerCharacter;
+		}
+		else if(board[7] == board[8] && board[8] == board[9] && board[9] == computerCharacter) {
+			return computerCharacter;
+		}
+		for(int index = 1; index < 10;index++)
+			if(board[index] == ' ')
+				return CONTINUE;
+		return TIE;
+	}
+	
 	public static void main(String[] args) {
 
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
