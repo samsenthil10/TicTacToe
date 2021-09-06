@@ -293,7 +293,7 @@ public class TicTacToeGame {
 		}
 		return flag;
 	}
-	
+
 	public static int blockPlayerFinalWinningMove() {
 
 		int flag = 0;
@@ -438,6 +438,24 @@ public class TicTacToeGame {
 		}
 		return flag;
 	}
+
+	public static int computerChoosesCorners() {
+		int flag = 0;
+		int[] possibleCorners = {1,3,5,7};
+		if(board[1]==' ' || board[3]!=' ' || board[5]!=' ' || board[7]!=' ') {
+			while(true) {	
+				int chosenIndex = 0 + (int)Math.random()*3;
+				int chosenCorner = possibleCorners[chosenIndex];
+				if(board[chosenCorner] == ' ') {
+					board[chosenCorner] = computerCharacter;
+					break;
+				}
+			}
+			return 1;
+		}
+		return flag;
+	}
+
 	public static void main(String[] args) {
 
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
