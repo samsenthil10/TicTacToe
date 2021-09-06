@@ -23,18 +23,18 @@ public class TicTacToeGame {
 		switch(choice) {
 
 		case "X": playerCharacter = 'X';
-				  computerCharacter = 'O';
-				  break;
+		computerCharacter = 'O';
+		break;
 		case "O": playerCharacter = 'O';
-				  computerCharacter = 'X';
-				  break;
+		computerCharacter = 'X';
+		break;
 		default:System.out.println("Invalid Character!");
-				System.exit(0);
+		System.exit(0);
 		}
 	}
 
 	public static void showBoard() {
-		
+
 		System.out.println(" -------------");
 		for (int iterator = 1; iterator < 10; iterator++) {
 			System.out.print(" | " + iterator);
@@ -45,10 +45,44 @@ public class TicTacToeGame {
 		}
 	}
 
+	public static void currentBoard() {
+
+		System.out.println(" -------------");
+		for (int iterator = 1; iterator < 10; iterator++) {
+			System.out.print(" | " + board[iterator]);
+			if (iterator % 3 == 0) {
+				System.out.println(" | ");
+				System.out.println(" -------------");
+			}
+		}
+	}
+
+	public static void chooseBoardPosition(char currentPlayer) {
+		
+		System.out.print("Choose your block: ");
+		int position = scanner.nextInt();
+		if(position > 0 && position < 10) {
+			if(board[position]==' ') {
+				board[position] = currentPlayer;
+				currentBoard();
+			}
+			else {
+				System.out.println("Block Occupied");
+			}
+		}
+		else {
+
+			System.out.println("Invalid Position");
+		}
+	}
+
 	public static void main(String[] args) {
+
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
+		System.out.println();
 		initializeBoard();
 		chooseCharacter();
 		showBoard();
+		chooseBoardPosition(playerCharacter);
 	}
 }
