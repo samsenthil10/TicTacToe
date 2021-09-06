@@ -63,13 +63,13 @@ public class TicTacToeGame {
 		}
 	}
 
-	public static void chooseBoardPosition(char currentPlayer) {
+	public static void chooseBoardPosition() {
 
 		System.out.print("Choose your block: ");
 		int position = scanner.nextInt();
 		if(position > 0 && position < 10) {
 			if(board[position]==' ') {
-				board[position] = currentPlayer;
+				board[position] = playerCharacter;
 				currentBoard();
 			}
 			else {
@@ -455,13 +455,13 @@ public class TicTacToeGame {
 		}
 		return flag;
 	}
-	
+
 	public static int computerSubSequentChoice() {
-		
+
 		int flag = 0;
-		
+
 		if(board[5]==' ') {
-			
+
 			board[5]= computerCharacter;
 			return 1;
 		}
@@ -485,5 +485,55 @@ public class TicTacToeGame {
 
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
 		System.out.println();
+		char gameState = CONTINUE;
+		initializeBoard();
+		chooseCharacter();
+		showBoard();
+		tossForFirstPlayer();
+		while(gameState != TIE || gameState!= playerCharacter || gameState!=computerCharacter) {
+
+			if(currentPlayer == playerCharacter) {
+				currentBoard();
+				chooseBoardPosition();
+				gameState = checkForGameStateEveryMove();
+				if(gameState == CONTINUE)
+					currentPlayer = computerCharacter;
+				else if(gameState == TIE) {
+					System.out.println("Draw Game");
+					break;
+				}
+				else if(gameState == playerCharacter) {
+					System.out.println("Player Wins!");
+					break;
+				}
+				else if(gameState == computerCharacter) {
+					System.out.println("Computer Wins!");
+					break;
+				}
+			}
+			else {
+				
+				if(computerFinalWinningMove() == 1) {
+					System.out.println("Computer Wins!");
+					break;
+				}
+				else if(blockPlayerFinalWinningMove()==1) {
+					currentPlayer = playerCharacter;
+					continue;
+				}
+				else if(computerChoosesCorners() == 1) {
+
+					currentPlayer = playerCharacter;
+					continue;
+				}
+				else {
+					if(computerSubSequentChoice()==1) {
+						currentPlayer = playerCharacter;
+						continue;
+					}
+				}
+				currentPlayer = playerCharacter;
+			}
+		}
 	}
 }
