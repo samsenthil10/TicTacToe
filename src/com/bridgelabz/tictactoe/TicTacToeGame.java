@@ -58,7 +58,7 @@ public class TicTacToeGame {
 	}
 
 	public static void chooseBoardPosition(char currentPlayer) {
-		
+
 		System.out.print("Choose your block: ");
 		int position = scanner.nextInt();
 		if(position > 0 && position < 10) {
