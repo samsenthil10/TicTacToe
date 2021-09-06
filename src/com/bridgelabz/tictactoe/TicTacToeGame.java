@@ -293,7 +293,152 @@ public class TicTacToeGame {
 		}
 		return flag;
 	}
+	
+	public static int blockComputerFinalWinningMove() {
 
+		int flag = 0;
+
+		if(board[1] == board[2] && board[2] == computerCharacter) {
+			if(board[3] != ' ') {
+				board[3] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[1] == board[3] && board[3] == computerCharacter) {
+			if(board[2] != ' ')  {
+				board[2] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[1] == board[4] && board[4] == computerCharacter) {
+			if(board[7] != ' ') {
+				board[7] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[1] == board[7] && board[7] == computerCharacter) {
+			if(board[4] != ' ') {
+				board[4] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[1] == board[5] && board[5] == computerCharacter) {
+			if(board[9] != ' ') {
+				board[9] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[1] == board[9] && board[9] == computerCharacter) {
+			if(board[5] != ' ') {
+				board[5] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[2] == board[3] && board[3] == computerCharacter) {
+			if(board[1] != ' ') {
+				board[1] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[2] == board[5] && board[5] == computerCharacter) {
+			if(board[8] != ' ') {
+				board[8] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[2] == board[8] && board[8] == computerCharacter) {
+			if(board[5] != ' ') {
+				board[5] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[2] == board[5] && board[5] == computerCharacter) {
+			if(board[8] != ' ') {
+				board[8] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[3] == board[5] && board[5] == computerCharacter) {
+			if(board[7] != ' ') {
+				board[7] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[3] == board[7] && board[7] == computerCharacter) {
+			if(board[5] != ' ') {
+				board[5] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[3] == board[6] && board[6] == computerCharacter) {
+			if(board[9] != ' ') {
+				board[9] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[3] == board[9] && board[9] == computerCharacter) {
+			if(board[6] != ' ') {
+				board[6] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[4] == board[7] && board[7] == computerCharacter) {
+			if(board[1] != ' ') {
+				board[1] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[4] == board[5] && board[5] == computerCharacter) {
+			if(board[6] != ' ') {
+				board[6] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[4] == board[6] && board[6] == computerCharacter) {
+			if(board[5] != ' ') {
+				board[5] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[5] == board[8] && board[8] == computerCharacter) {
+			if(board[2] != ' ') {
+				board[2] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[5] == board[6] && board[6] == computerCharacter) {
+			if(board[4] != ' ') {
+				board[4] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[5] == board[7] && board[7] == computerCharacter) {
+			if(board[3] != ' ') {
+				board[3] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[6] == board[9] && board[9] == computerCharacter) {
+			if(board[3] != ' ') {
+				board[3] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[7] == board[8] && board[8] == computerCharacter) {
+			if(board[9] != ' ') {
+				board[9] = playerCharacter;
+				return 1;
+			}
+		}
+		else if(board[7] == board[9] && board[9] == computerCharacter) {
+			if(board[8] != ' ') {
+				board[8] = playerCharacter;
+				return 1;
+			}
+		}
+		return flag;
+	}
+	
 	public static void main(String[] args) {
 
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
