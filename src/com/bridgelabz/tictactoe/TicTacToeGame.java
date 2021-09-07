@@ -67,6 +67,7 @@ public class TicTacToeGame {
 
 		System.out.print("Choose your block: ");
 		int position = scanner.nextInt();
+		scanner.nextLine();
 		if(position > 0 && position < 10) {
 			if(board[position]==' ') {
 				board[position] = playerCharacter;
@@ -86,6 +87,7 @@ public class TicTacToeGame {
 
 		System.out.print("Choose your toss(Heads(1)/Tails(2)): ");
 		int tossCall = scanner.nextInt();
+		scanner.nextLine();
 		int toss = HEADS + (int)(Math.random() * TAILS);
 		if(tossCall == toss)
 			currentPlayer = playerCharacter;
@@ -485,55 +487,65 @@ public class TicTacToeGame {
 
 		System.out.println("----------Welcome to Tic Tac Toe Game----------");
 		System.out.println();
+		String choice = "N";
 		char gameState = CONTINUE;
-		initializeBoard();
-		chooseCharacter();
-		showBoard();
-		tossForFirstPlayer();
-		while(gameState != TIE || gameState!= playerCharacter || gameState!=computerCharacter) {
+		do {
+			initializeBoard();
+			chooseCharacter();
+			showBoard();
+			tossForFirstPlayer();
+			while(gameState != TIE || gameState!= playerCharacter || gameState!=computerCharacter) {
 
-			if(currentPlayer == playerCharacter) {
-				currentBoard();
-				chooseBoardPosition();
-				gameState = checkForGameStateEveryMove();
-				if(gameState == CONTINUE)
-					currentPlayer = computerCharacter;
-				else if(gameState == TIE) {
-					System.out.println("Draw Game");
-					break;
-				}
-				else if(gameState == playerCharacter) {
-					System.out.println("Player Wins!");
-					break;
-				}
-				else if(gameState == computerCharacter) {
-					System.out.println("Computer Wins!");
-					break;
-				}
-			}
-			else {
-				
-				if(computerFinalWinningMove() == 1) {
-					System.out.println("Computer Wins!");
-					break;
-				}
-				else if(blockPlayerFinalWinningMove()==1) {
-					currentPlayer = playerCharacter;
-					continue;
-				}
-				else if(computerChoosesCorners() == 1) {
-
-					currentPlayer = playerCharacter;
-					continue;
+				if(currentPlayer == playerCharacter) {
+					currentBoard();
+					chooseBoardPosition();
+					gameState = checkForGameStateEveryMove();
+					if(gameState == CONTINUE)
+						currentPlayer = computerCharacter;
+					else if(gameState == TIE) {
+						System.out.println("Draw Game");
+						System.out.print("Do you want to continue(Y/N): ");
+						choice=scanner.nextLine();
+						break;
+					}
+					else if(gameState == playerCharacter) {
+						System.out.println("Player Wins!");
+						System.out.print("Do you want to continue(Y/N): ");
+						choice=scanner.nextLine();
+						break;
+					}
+					else if(gameState == computerCharacter) {
+						System.out.println("Computer Wins!");
+						System.out.print("Do you want to continue(Y/N): ");
+						choice=scanner.nextLine();
+						break;
+					}
 				}
 				else {
-					if(computerSubSequentChoice()==1) {
+
+					if(computerFinalWinningMove() == 1) {
+						System.out.println("Computer Wins!");
+						System.out.print("Do you want to continue(Y/N): ");
+						choice=scanner.nextLine();
+						break;
+					}
+					else if(blockPlayerFinalWinningMove()==1) {
 						currentPlayer = playerCharacter;
 						continue;
 					}
+					else if(computerChoosesCorners() == 1) {
+
+						currentPlayer = playerCharacter;
+						continue;
+					}
+					else {
+						if(computerSubSequentChoice()==1) {
+							currentPlayer = playerCharacter;
+							continue;
+						}
+					}
 				}
-				currentPlayer = playerCharacter;
 			}
-		}
+		}while(!choice.equalsIgnoreCase("N"));
 	}
 }
